@@ -1,22 +1,44 @@
-# Hunter Foreman Docs
+# Hunter Foreman Submission Pack
 
-Architecture, product pitch, screenshots, demo guide, and hackathon submission material for Hunter Foreman.
+Judge-facing documentation, pitch material, demo scripts, and architecture notes for the Hunter Foreman hackathon submission.
 
-## Purpose
+## Repositories
 
-This repository supports the public story around Hunter Foreman for judges, collaborators, and potential investors.
+- Core app: `jaydumisuni/hunter-foreman`
+- Demo receiver: `jaydumisuni/hunter-foreman-demo`
+- Submission pack: `jaydumisuni/hunter-foreman-docs`
 
-## Sections To Build
+See `cross-repo-index.md` for the three-repo map.
 
-- Product vision
-- Problem statement
-- Architecture diagrams
-- Demo guide
-- Roadmap
-- Screenshots
-- Hackathon submission notes
-- Investor pitch notes
+## What This Repo Contains
 
-## Core Positioning
+```text
+pitch/              Short and long pitch material
+submission/         Hackathon submission text and checklist
+demo/               Demo script, run flow, and judge walkthrough
+architecture/       Product and system diagrams in text form
+assets/             Screenshot and video placeholders
+qa/                 Judge questions and concise answers
+roadmap.md          Public roadmap
+public-safety.md    Public/private boundary
+```
 
-Hunter Foreman is not just a chatbot. It is an AI operations foreman that coordinates business requests, workflows, dashboards, and human escalation.
+## Core Story
+
+Hunter Foreman is an AI operations foreman for small businesses.
+
+ROSE receives customer requests. Foreman understands the request, creates the task, routes the work, updates the dashboard, dispatches to connected apps, and escalates to humans when needed.
+
+The public hackathon version is intentionally safe. It does not expose private Hunter internals, production credentials, private prompts, client data, or device repair/recovery modules.
+
+## Fast Review Path
+
+1. Read `pitch/one-minute-pitch.md`.
+2. Read `architecture/system-overview.md`.
+3. Run the demo using `demo/run-guide.md`.
+4. Use `submission/checklist.md` before final submission.
+5. Use `qa/judge-faq.md` for judge/investor questions.
+
+## Submission Status
+
+Phase 1 is being completed across the three public repositories before the break/test phase begins.
