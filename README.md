@@ -8,6 +8,8 @@ Judge-facing documentation, pitch material, demo scripts, and architecture notes
 - Demo receiver: `jaydumisuni/hunter-foreman-demo`
 - Submission pack: `jaydumisuni/hunter-foreman-docs`
 
+See `cross-repo-index.md` for the three-repo map.
+
 ## What This Repo Contains
 
 ```text
@@ -17,6 +19,8 @@ demo/               Demo script, run flow, and judge walkthrough
 architecture/       Product and system diagrams in text form
 assets/             Screenshot and video placeholders
 qa/                 Judge questions and concise answers
+roadmap.md          Public roadmap
+public-safety.md    Public/private boundary
 ```
 
 ## Core Story
@@ -26,6 +30,14 @@ Hunter Foreman is an AI operations foreman for small businesses.
 ROSE receives customer requests. Foreman understands the request, creates the task, routes the work, updates the dashboard, dispatches to connected apps, and escalates to humans when needed.
 
 The public hackathon version is intentionally safe. It does not expose private Hunter internals, production credentials, private prompts, client data, or device repair/recovery modules.
+
+## Fast Review Path
+
+1. Read `pitch/one-minute-pitch.md`.
+2. Read `architecture/system-overview.md`.
+3. Run the demo using `demo/run-guide.md`.
+4. Use `submission/checklist.md` before final submission.
+5. Use `qa/judge-faq.md` for judge/investor questions.
 
 ## Submission Status
 
