@@ -1,0 +1,121 @@
+name: Submission Proof
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  public-submission-proof:
+    name: Public submission proof
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v4
+        with:
+          path: hunter-foreman-docs
+
+      - name: Clone public repos
+        run: |
+          git clone --depth 1 https://github.com/jaydumisuni/hunter-foreman.git hunter-foreman
+          git clone --depth 1 https://github.com/jaydumisuni/hunter-foreman-demo.git hunter-foreman-demo
+
+      - name: Print repo heads
+        run: |
+          for repo in hunter-foreman hunter-foreman-demo hunter-foreman-docs; do
+            echo "== $repo =="
+            git -C "$repo" log -1 --oneline
+          done
+
+      - name: Check required files
+        run: |
+          test -f hunter-foreman/package.json
+          test -f hunter-foreman/Dockerfile
+          test -f hunter-foreman/docker-compose.yml
+          test -f hunter-foreman/docker-compose.connected.yml
+          test -f hunter-foreman/.env.example
+          test -f hunter-foreman-demo/package.json
+          test -f hunter-foreman-docs/SUBMISSION_READY.md
+          test -f hunter-foreman-docs/proof/clean-clone-checklist.md
+          test -f hunter-foreman-docs/proof/provider-and-amd-proof.md
+          test -f hunter-foreman-docs/reviewer/engineering-principles.md
+
+      - name: Run core smoke tests
+        working-directory: hunter-foreman
+        run: npm test
+
+      - name: Main app Docker proof
+        working-directory: hunter-foreman
+        run: |
+          docker compose up --build -d
+          for i in {1..30}; do
+            if curl -fsS http://localhost:3000/health; then
+              break
+            fi
+            sleep 2
+          done
+          curl -fsS http://localhost:3000/health | tee ../main-health.json
+          curl -fsS http://localhost:3000/api/app-bridge/status | tee ../main-bridge-status.json
+          docker compose down
+
+      - name: Connected app Docker proof
+        working-directory: hunter-foreman
+        run: |
+          docker compose -f docker-compose.connected.yml up --build -d
+          for i in {1..30}; do
+            if curl -fsS http://localhost:3000/health && curl -fsS http://localhost:3100/health; then
+              break
+            fi
+            sleep 2
+          done
+          curl -fsS http://localhost:3000/health | tee ../connected-main-health.json
+          curl -fsS http://localhost:3100/health | tee ../receiver-health.json
+          curl -fsS http://localhost:3000/api/app-bridge/status | tee ../connected-bridge-status.json
+          curl -fsS http://localhost:3100/api/tasks | tee ../receiver-tasks-before.json
+          curl -fsS -X POST http://localhost:3000/api/requests \
+            -H 'content-type: application/json' \
+            -d '{"customerName":"Proof Client","channel":"website","message":"We need event booking, digital invitations, tickets, QR check-in and a dashboard update."}' \
+            | tee ../created-task.json
+          sleep 2
+          curl -fsS http://localhost:3100/api/tasks | tee ../receiver-tasks-after.json
+          docker compose -f docker-compose.connected.yml down
+
+      - name: Provider fallback proof
+        working-directory: hunter-foreman
+        run: |
+          AI_PROVIDER=fireworks FIREWORKS_API_KEY= node - <<'NODE'
+          const assert = require('assert');
+          const { createTaskWithProvider } = require('./packages/foreman-core');
+          (async () => {
+            const task = await createTaskWithProvider({
+              customerName: 'Fallback Proof',
+              channel: 'website',
+              message: 'We need an automation dashboard and WhatsApp follow-up workflow.'
+            });
+            assert.strictEqual(task.classifier.provider, 'rules');
+            assert.strictEqual(task.classifier.fallbackUsed, true);
+            assert.ok(task.classifier.fallbackReason);
+            console.log(JSON.stringify({ ok: true, classifier: task.classifier, workflow: task.workflow.label }, null, 2));
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          NODE
+
+      - name: Secret and private-boundary grep
+        run: |
+          ! grep -RInE "(FIREWORKS_API_KEY=sk-|AI_API_KEY=sk-|BEGIN RSA PRIVATE KEY|PRIVATE KEY-----|client_secret|password=)" hunter-foreman hunter-foreman-demo hunter-foreman-docs
+
+      - name: Upload proof artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: submission-proof-artifacts
+          path: |
+            *.json
+            hunter-foreman-docs/SUBMISSION_READY.md
+            hunter-foreman-docs/proof/*.md
