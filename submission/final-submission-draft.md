@@ -10,7 +10,7 @@ AI operations infrastructure for small businesses — from customer request to o
 
 ## Short Description
 
-Hunter Foreman turns customer requests into structured work. ROSE receives the request, Foreman classifies it, chooses the workflow, creates a task, updates the dashboard, dispatches the task through a versioned app bridge, and receives acknowledgement from a connected application.
+Hunter Foreman turns customer requests into structured work. ROSE receives the request, Foreman classifies it through a provider-backed classifier or safe deterministic fallback, chooses the workflow, creates a task, updates the dashboard, dispatches the task through a versioned app bridge, and receives acknowledgement from a connected application.
 
 ## Problem
 
@@ -25,7 +25,8 @@ Hunter Foreman is a public-safe proof of an AI operations layer.
 It demonstrates:
 
 - AI receptionist intake through ROSE
-- Foreman routing and workflow selection
+- provider-backed Foreman classification with explicit fallback
+- workflow selection
 - task creation with confidence and escalation state
 - live dashboard visibility
 - notification previews
@@ -41,6 +42,15 @@ The submission is split across three public repositories:
 2. `hunter-foreman-demo` — connected external receiver app
 3. `hunter-foreman-docs` — submission pack, pitch material, proof checklist, and judge documentation
 
+The main app now supports:
+
+```text
+AI_PROVIDER=fireworks  -> provider-backed classification through Fireworks-compatible chat completions
+AI_PROVIDER=mock/rules -> deterministic local fallback for judge-safe demos
+```
+
+No API keys or private credentials are committed. If the provider is not configured, the app still runs and marks fallback usage in the task classifier metadata.
+
 ## Demo Flow
 
 ```text
@@ -48,7 +58,7 @@ Customer request
    ↓
 ROSE intake
    ↓
-Foreman routing
+Foreman provider/fallback classification
    ↓
 Task created
    ↓
@@ -62,6 +72,17 @@ Receiver acknowledgement
    ↓
 Visible state ladder and timeline
 ```
+
+## AI Infra / AMD Positioning
+
+Hunter Foreman is containerized and includes a real provider-backed classifier path. For AI Infra Summit submission, the honest current position is:
+
+- implemented: Dockerized public app and receiver demo
+- implemented: Fireworks-compatible provider classifier path
+- implemented: deterministic fallback for reproducible local judging
+- pending proof: AMD-aligned provider/container run evidence before final packaging
+
+The project should only claim verified AMD platform use after the provider-backed run is performed and documented in the proof checklist.
 
 ## Why It Matters
 
