@@ -19,6 +19,7 @@ demo/               Demo script, run flow, and judge walkthrough
 architecture/       Product and system diagrams in text form
 assets/             Screenshot and video placeholders
 qa/                 Judge questions and concise answers
+proof/              Clean-clone and judge-readiness proof checklist
 roadmap.md          Public roadmap
 public-safety.md    Public/private boundary
 ```
@@ -27,7 +28,7 @@ public-safety.md    Public/private boundary
 
 Hunter Foreman is an AI operations foreman for small businesses.
 
-ROSE receives customer requests. Foreman understands the request, creates the task, routes the work, updates the dashboard, dispatches to connected apps, and escalates to humans when needed.
+ROSE receives customer requests. Foreman understands the request, creates the task, routes the work, updates the dashboard, dispatches to connected apps, receives acknowledgement, and shows the work state through a live dashboard.
 
 The public hackathon version is intentionally safe. It does not expose private Hunter internals, production credentials, private prompts, client data, or device repair/recovery modules.
 
@@ -36,9 +37,17 @@ The public hackathon version is intentionally safe. It does not expose private H
 1. Read `pitch/one-minute-pitch.md`.
 2. Read `architecture/system-overview.md`.
 3. Run the demo using `demo/run-guide.md`.
-4. Use `submission/checklist.md` before final submission.
-5. Use `qa/judge-faq.md` for judge/investor questions.
+4. Prove the demo using `proof/clean-clone-checklist.md`.
+5. Use `submission/checklist.md` before final submission.
+6. Use `qa/judge-faq.md` for judge/investor questions.
+
+## Submission Positioning
+
+- AI Infra Summit angle: `submission/ai-infra-summit-positioning.md`
+- TechEx business angle: `submission/techex-business-positioning.md`
+
+Same platform, different emphasis.
 
 ## Submission Status
 
-Phase 1 is being completed across the three public repositories before the break/test phase begins.
+The three public repositories are now in proof/review phase before screenshots, demo recording, and final submission packaging.
