@@ -98,8 +98,8 @@ jobs:
               break
             fi
             if [ "$i" = "60" ]; then
-              docker compose -f docker-compose.connected.yml ps
-              docker compose -f docker-compose.connected.yml logs --no-color
+              docker compose -f docker-compose.connected.yml ps | tee ../connected-docker-ps.txt
+              docker compose -f docker-compose.connected.yml logs --no-color | tee ../connected-docker-logs.txt
               exit 1
             fi
             sleep 2
@@ -169,5 +169,6 @@ jobs:
           name: submission-proof-artifacts
           path: |
             *.json
+            *.txt
             hunter-foreman-docs/SUBMISSION_READY.md
             hunter-foreman-docs/proof/*.md
