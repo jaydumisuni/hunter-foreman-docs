@@ -13,7 +13,8 @@ Hunter Foreman is not only a chatbot. It is infrastructure for coordinating AI-a
 Key infrastructure pieces:
 
 - ROSE intake layer
-- Foreman routing layer
+- provider-backed Foreman classification layer
+- deterministic local fallback classifier
 - task lifecycle layer
 - app bridge contract
 - external receiver integration
@@ -23,6 +24,28 @@ Key infrastructure pieces:
 - Docker local deployment
 - public-safe repository split
 
+## AI Provider And Fallback Truth
+
+The public app now supports two classifier modes:
+
+```text
+AI_PROVIDER=fireworks  -> Fireworks OpenAI-compatible chat completions classification
+AI_PROVIDER=mock/rules -> deterministic rule-based classifier for local demos and safe fallback
+```
+
+This keeps the demo reproducible without secrets while making the AI decision point real when a provider key is configured.
+
+If the provider is missing, unsupported, or fails, Hunter Foreman keeps working through the deterministic fallback and marks the task with classifier metadata showing that fallback was used.
+
+## AMD / Fireworks Alignment
+
+The AI Infra Summit judging criteria include meaningful AMD platform use. Hunter Foreman addresses that honestly in two stages:
+
+1. **Implemented now:** the Foreman decision layer has a real provider-backed path through Fireworks-style OpenAI-compatible inference, plus local fallback for safe judging.
+2. **Proof step before final submission:** run or document the provider-backed container configuration in an AMD-aligned environment or with the hackathon-supported Fireworks/AMD path, then record the evidence in `proof/clean-clone-checklist.md` and final submission notes.
+
+The project should not claim verified AMD deployment until that proof run has been completed. Until then, the accurate claim is: **containerized app with implemented Fireworks provider path and AMD proof run pending.**
+
 ## Demo Story
 
 ```text
@@ -30,7 +53,7 @@ Customer request
    ↓
 ROSE intake
    ↓
-Foreman reasoning/routing
+Foreman provider/fallback classification
    ↓
 Task created
    ↓
@@ -45,7 +68,9 @@ Dashboard visibility
 
 ## What Judges Should Notice
 
-- The system is deployable locally.
+- The system is containerized and deployable locally.
+- The classifier has a real provider-backed path, not only hardcoded routing.
+- The fallback mode is explicit and visible in task metadata.
 - The bridge uses a versioned contract.
 - The receiver can be swapped for other business applications.
 - The dashboard shows operational state, not only chat output.
