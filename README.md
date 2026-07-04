@@ -1,6 +1,6 @@
 # Hunter Foreman Submission Pack
 
-Judge-facing documentation, pitch material, demo scripts, and architecture notes for the Hunter Foreman hackathon submission.
+Judge-facing documentation, pitch material, demo scripts, proof material, and architecture notes for the Hunter Foreman hackathon submission.
 
 ## Repositories
 
@@ -8,18 +8,18 @@ Judge-facing documentation, pitch material, demo scripts, and architecture notes
 - Demo receiver: `jaydumisuni/hunter-foreman-demo`
 - Submission pack: `jaydumisuni/hunter-foreman-docs`
 
-See `cross-repo-index.md` for the three-repo map.
+See `cross-repo-index.md` and `proof/repo-coverage-matrix.md` for the three-repo map and coverage status.
 
 ## What This Repo Contains
 
 ```text
 pitch/              Short and long pitch material
-submission/         Hackathon submission text and checklist
+submission/         Hackathon submission text, judge walkthrough, and checklist
 demo/               Demo script, run flow, and judge walkthrough
-architecture/       Product and system diagrams in text form
+architecture/       Product, system, and app-bridge contract notes
 assets/             Screenshot and video placeholders
 qa/                 Judge questions and concise answers
-proof/              Clean-clone and judge-readiness proof checklist
+proof/              Clean-clone, repo coverage, and judge-readiness proof
 roadmap.md          Public roadmap
 public-safety.md    Public/private boundary
 ```
@@ -35,11 +35,13 @@ The public hackathon version is intentionally safe. It does not expose private H
 ## Fast Review Path
 
 1. Read `pitch/one-minute-pitch.md`.
-2. Read `architecture/system-overview.md`.
-3. Run the demo using `demo/run-guide.md`.
-4. Prove the demo using `proof/clean-clone-checklist.md`.
-5. Use `submission/checklist.md` before final submission.
-6. Use `qa/judge-faq.md` for judge/investor questions.
+2. Read `submission/final-submission-draft.md`.
+3. Read `architecture/system-overview.md`.
+4. Read `architecture/app-bridge-contract.md`.
+5. Run the demo using `demo/run-guide.md`.
+6. Present the demo using `demo/three-minute-demo-script.md`.
+7. Prove all repos using `proof/repo-coverage-matrix.md` and `proof/clean-clone-checklist.md`.
+8. Use `submission/judge-walkthrough.md`, `submission/checklist.md`, and `qa/judge-faq.md` before final submission.
 
 ## Submission Positioning
 
