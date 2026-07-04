@@ -108,7 +108,17 @@ jobs:
 
       - name: Secret and private-boundary grep
         run: |
-          ! grep -RInE "(FIREWORKS_API_KEY=sk-|AI_API_KEY=sk-|BEGIN RSA PRIVATE KEY|PRIVATE KEY-----|client_secret|password=)" hunter-foreman hunter-foreman-demo hunter-foreman-docs
+          set -euo pipefail
+          scan_targets="hunter-foreman hunter-foreman-demo hunter-foreman-docs"
+          if grep -RInE \
+            --exclude-dir=.git \
+            --exclude-dir=node_modules \
+            --exclude='submission-proof.yml' \
+            '(sk-[A-Za-z0-9_-]{20,}|BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY|client_secret["'"' ]*[:=]["'"' ][A-Za-z0-9_-]{12,}|password["'"' ]*[:=]["'"' ][^<[:space:]]{8,})' \
+            $scan_targets; then
+            echo "Potential committed secret found. Review and remove before submission."
+            exit 1
+          fi
 
       - name: Upload proof artifacts
         uses: actions/upload-artifact@v4
