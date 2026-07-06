@@ -23,10 +23,11 @@ Key infrastructure pieces:
 - human escalation
 - Docker local deployment
 - public-safe repository split
+- Sergeant supporting reviewer/proof layer
 
 ## AI Provider And Fallback Truth
 
-The public app now supports two classifier modes:
+The public app supports two classifier modes:
 
 ```text
 AI_PROVIDER=fireworks  -> Fireworks OpenAI-compatible chat completions classification
@@ -36,6 +37,24 @@ AI_PROVIDER=mock/rules -> deterministic rule-based classifier for local demos an
 This keeps the demo reproducible without secrets while making the AI decision point real when a provider key is configured.
 
 If the provider is missing, unsupported, or fails, Hunter Foreman keeps working through the deterministic fallback and marks the task with classifier metadata showing that fallback was used.
+
+## Fireworks Proof State
+
+The Fireworks provider path is implemented in the core app and the live verification script has been merged into `hunter-foreman`.
+
+Accurate current claim:
+
+```text
+Fireworks provider path implemented; live verification script merged; live provider proof requires running scripts/test-fireworks-live.js with a real FIREWORKS_API_KEY outside GitHub.
+```
+
+Strong claim only after evidence:
+
+```text
+Fireworks live integration verified with classifier.provider=fireworks and fallbackUsed=false across multiple real requests.
+```
+
+Use the strong claim only if that live run output is captured.
 
 ## AMD / Fireworks Alignment
 
@@ -75,6 +94,7 @@ Dashboard visibility
 - The receiver can be swapped for other business applications.
 - The dashboard shows operational state, not only chat output.
 - Human review is built into the workflow.
+- Sergeant supports the proof-before-claim review discipline.
 - The public project is scoped safely without private Hunter internals.
 
 ## Strongest Line
