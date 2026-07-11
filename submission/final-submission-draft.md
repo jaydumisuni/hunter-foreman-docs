@@ -20,7 +20,7 @@ Most chatbot demos stop at the reply. A real business needs the work to move.
 
 ## Solution
 
-Hunter Foreman is a public-safe proof of an AI operations layer.
+Hunter Foreman is a public-safe implementation of an AI operations layer.
 
 It demonstrates:
 
@@ -37,7 +37,21 @@ It demonstrates:
 
 - Main public repository: https://github.com/jaydumisuni/hunter-foreman
 - Public demo application: https://hunter-foreman.thetechguyds.com
+- Main business platform: https://thetechguyds.com
+- Events platform: https://events.thetechguyds.com
 - Local/Docker application: http://localhost:3000
+
+## Business Validation and Implementation Boundary
+
+Hunter Foreman was developed inside **THETECHGUY DIGITAL SOLUTIONS**, an operating Zambian business serving real clients. The business and Events platforms shown in the hero are real production-facing systems whose workflows informed the submission.
+
+The public demo also served as a completion and verification path for the wider business architecture. Request intake, Fireworks-backed classification, structured ownership, lifecycle visibility, dashboard state, analytics, system health, settings, the App Bridge contract, and connected-receiver proof are completed and verified. They do not need to be planned or rebuilt for the business.
+
+The remaining work is **business rollout**: applying the completed implementation to the main operating environment, configuring private services, and connecting existing systems safely.
+
+The broader THETECHGUY ecosystem already supports real Events operations, digital invitations, QR access, payment handling, referrals, commissions, and private WhatsApp workflows. These production systems are intentionally excluded from the public hackathon runtime because they require private credentials, client records, transaction data, and internal infrastructure.
+
+Not connected in the public demo does not mean unbuilt.
 
 ## Presentation Voice and Ecosystem Reuse
 
@@ -120,6 +134,8 @@ proof/fireworks-classification-proof.json
 
 This project reframes AI from a conversation tool into an operations layer. A small business should not need a large software team to organize work, connect apps, and see what is happening. Hunter Foreman shows how an AI-assisted system can receive, route, track, and escalate work while keeping humans in control.
 
+The project is grounded in real operating workflows rather than a fictional hackathon-only scenario. The public implementation proves the orchestration layer, while the broader business provides the real client, Events, payment, referral, and commission context that the system is designed to coordinate.
+
 ## Public Safety Boundary
 
 This public version intentionally excludes:
@@ -128,11 +144,12 @@ This public version intentionally excludes:
 - production credentials
 - private prompts
 - client data
-- payment secrets
+- payment and transaction records
+- referral and commission records
 - device repair/recovery logic
 - sensitive THETECHGUY business internals
 
-The public repositories demonstrate the architecture, not private production systems.
+The public repositories demonstrate the architecture and completed public-safe implementation without exposing private production systems.
 
 ## Judging Notes
 
@@ -140,9 +157,13 @@ Judges should evaluate the project as infrastructure, not as a single chatbot. T
 
 The Hunter voice narration should be considered supporting ecosystem integration and evidence of reusable internal AI infrastructure, not a claim that voice interaction is part of the current Foreman runtime.
 
-## Future Direction
+The business and Events URLs demonstrate the operating ecosystem behind the project. They do not imply that private production payments, referrals, commissions, client records, or credentials are exposed through the public demo.
 
-The same architecture can later support Events, Sales, Support, Payments, Field Work, Device Service, and internal business automation. Hunter Foreman is the operating layer that coordinates those systems.
+## Business Rollout and Future Expansion
+
+The immediate next step is rolling the completed Foreman implementation into the main THETECHGUY environment and connecting existing operational systems through approved private adapters.
+
+Further expansion includes multi-business deployment, additional client-specific receivers, deeper AI workflows, and production-scale monitoring.
 
 ## Submission Status
 
