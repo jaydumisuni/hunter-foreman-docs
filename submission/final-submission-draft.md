@@ -1,4 +1,4 @@
-# Final Submission Draft
+# Final Submission Record
 
 ## Project Name
 
@@ -10,7 +10,7 @@ AI operations infrastructure for small businesses — from customer request to o
 
 ## Short Description
 
-Hunter Foreman turns customer requests into structured work. ROSE receives the request, Foreman classifies it through a provider-backed classifier or safe deterministic fallback, chooses the workflow, creates a task, updates the dashboard, dispatches the task through a versioned app bridge, and receives acknowledgement from a connected application.
+Hunter Foreman turns customer requests into structured work. ROSE receives the request, Foreman classifies it through Fireworks AI or a safe deterministic fallback, chooses the workflow, creates a task, updates the dashboard, dispatches the task through a versioned App Bridge, and receives acknowledgement from a connected application.
 
 ## Problem
 
@@ -25,24 +25,31 @@ Hunter Foreman is a public-safe proof of an AI operations layer.
 It demonstrates:
 
 - AI receptionist intake through ROSE
-- provider-backed Foreman classification with explicit fallback
+- verified Fireworks AI classification with explicit fallback
 - workflow selection
 - task creation with confidence and escalation state
 - live dashboard visibility
-- notification previews
-- versioned external app bridge contract
-- connected receiver app acknowledgement
+- versioned external App Bridge contract
+- connected receiver acknowledgement
 - public/private boundary for safe demonstration
 
-## What Was Built
+## Public Submission Entry Points
 
-The submission is split across three public repositories:
+- Main public repository: https://github.com/jaydumisuni/hunter-foreman
+- Public demo application: https://hunter-foreman.thetechguyds.com
+- Local/Docker application: http://localhost:3000
 
-1. `hunter-foreman` — main public demo app
-2. `hunter-foreman-demo` — connected external receiver app
-3. `hunter-foreman-docs` — submission pack, pitch material, proof checklist, and judge documentation
+## Repository Map
 
-The main app now supports:
+The implementation is split across three public repositories:
+
+1. [hunter-foreman](https://github.com/jaydumisuni/hunter-foreman) — main public application, Docker setup, and proof package
+2. [hunter-foreman-demo](https://github.com/jaydumisuni/hunter-foreman-demo) — connected external receiver application
+3. [hunter-foreman-docs](https://github.com/jaydumisuni/hunter-foreman-docs) — submission pack, pitch material, architecture, and judge documentation
+
+[Sergeant](https://github.com/jaydumisuni/Sergeant) is the supporting implementation reviewer/proof layer shaped through Hunter Foreman.
+
+The main app supports:
 
 ```text
 AI_PROVIDER=fireworks  -> provider-backed classification through Fireworks-compatible chat completions
@@ -58,13 +65,13 @@ Customer request
    ↓
 ROSE intake
    ↓
-Foreman provider/fallback classification
+Foreman Fireworks/fallback classification
    ↓
 Task created
    ↓
 Dashboard updated
    ↓
-App bridge dispatch
+App Bridge dispatch
    ↓
 Connected receiver app
    ↓
@@ -73,16 +80,23 @@ Receiver acknowledgement
 Visible state ladder and timeline
 ```
 
-## AI Infra / AMD Positioning
+## AI Infrastructure / AMD Positioning
 
-Hunter Foreman is containerized and includes a real provider-backed classifier path. For AI Infra Summit submission, the honest current position is:
+Hunter Foreman is containerized and includes a verified Fireworks-backed classifier path.
 
-- implemented: Dockerized public app and receiver demo
+Current evidence:
+
+- implemented: Dockerized public application and receiver demo
 - implemented: Fireworks-compatible provider classifier path
-- implemented: deterministic fallback for reproducible local judging
-- pending proof: AMD-aligned provider/container run evidence before final packaging
+- verified: successful Fireworks classifications using `accounts/fireworks/models/gpt-oss-120b`
+- verified: proof records `provider: fireworks` and `fallbackUsed: false`
+- implemented and verified: deterministic fallback for reproducible judging when provider credentials are unavailable
 
-The project should only claim verified AMD platform use after the provider-backed run is performed and documented in the proof checklist.
+The successful provider evidence is stored in the core repository at:
+
+```text
+proof/fireworks-classification-proof.json
+```
 
 ## Why It Matters
 
@@ -104,8 +118,12 @@ The public repositories demonstrate the architecture, not private production sys
 
 ## Judging Notes
 
-Judges should evaluate the project as infrastructure, not as a single chatbot. The important part is that a request moves through a full operational lifecycle and can be dispatched to another application through a versioned contract.
+Judges should evaluate the project as infrastructure, not as a single chatbot. The important part is that a request moves through a complete operational lifecycle and can be dispatched to another application through a versioned contract.
 
 ## Future Direction
 
 The same architecture can later support Events, Sales, Support, Payments, Field Work, Device Service, and internal business automation. Hunter Foreman is the operating layer that coordinates those systems.
+
+## Submission Status
+
+Submitted to **Track 3 — Unicorn Track**. The main repository field points to `jaydumisuni/hunter-foreman`, while the main README maps the related public repositories as required.
