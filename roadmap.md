@@ -1,54 +1,68 @@
 # Public Roadmap
 
-## Phase 1 — Public Demo
+Hunter Foreman distinguishes between capabilities completed and verified through the public implementation, systems already operational elsewhere in the THETECHGUY ecosystem, business rollout work, and further expansion.
 
-Status: nearly complete.
+## Implemented and Verified
+
+Status: completed for the submitted release and wider business architecture.
 
 - ROSE intake
-- Foreman routing
-- task creation
-- dashboard
+- Fireworks-backed classification
+- deterministic fallback
+- workflow routing
+- task creation and ownership
+- live dashboard
+- request log
+- task board
+- analytics
+- system health
+- regional and business settings
 - notification previews
-- app bridge
-- receiver app
+- App Bridge
+- connected receiver app
 - versioned bridge contract
+- receiver acknowledgement
 - Docker support
 - CI checks
+- proof package
 - submission pack
 
-## Phase 2 — Validation
+Capabilities completed and verified here do not need to be planned or rebuilt for the main business.
 
-- clean clone test
-- Docker startup test
-- connected two-app test
-- failure mode testing
-- judge simulation
-- screenshot capture
-- demo video recording
+## Operational Elsewhere in the Business Ecosystem
 
-## Phase 3 — Foreman Intelligence
+These systems already support real THETECHGUY business and client workflows but are intentionally not connected to the public hackathon runtime:
 
-- richer reasoning loop
-- explainable task plans
-- workflow confidence improvements
-- human review queue
-- execution status tracking
-- better event timeline
+- Events operations
+- digital invitations
+- guest access and QR check-in
+- payment handling
+- referral tracking
+- commission workflows
+- private WhatsApp business flows
 
-## Phase 4 — Real Integrations
+Their public-demo state is **not connected**, not **unbuilt**.
 
-Only after validation.
+## Business Rollout
 
-- Events platform
-- THETECHGUY Digital Solutions website
-- Support Hub
-- Pay Gateway
-- customer-specific apps
+The next step is applying the completed Hunter Foreman implementation to the main operating environment:
 
-## Phase 5 — Local AI Appliance
+- deploy the verified Foreman capabilities into the main business workflow
+- configure private credentials and services
+- connect existing Events, invitation, QR, payment, referral, commission, and WhatsApp systems through approved adapters
+- complete client-specific configuration
+- perform private runtime proof before production release
 
+This is rollout and configuration of completed work, not feature planning.
+
+## Further Expansion
+
+- multi-business deployment
+- additional client-specific App Bridge receivers
+- deeper multi-turn reasoning
+- richer explainable task plans
+- wider human-review workflows
+- production-scale monitoring and alerting
 - AMD Ryzen mini PC pilot
-- local-first deployment
-- offline/local mode
-- sync to cloud when available
-- small-business owned AI operations layer
+- local-first and offline operation
+- cloud synchronization when available
