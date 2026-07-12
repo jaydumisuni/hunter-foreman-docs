@@ -1,8 +1,8 @@
 # One-Minute Pitch
 
-Small businesses do not usually lose customers because they lack talent. They lose customers because requests arrive from everywhere and no one owns the work fast enough.
+Real businesses do not usually lose customers because they lack talent. They lose customers because requests arrive from everywhere and no one owns the work fast enough.
 
-Hunter Foreman is an AI operations foreman for small businesses.
+Hunter Foreman is an AI operations foreman for real businesses: bars, restaurants, cafés, repair shops, startups, small teams, and growing teams.
 
 ROSE acts as the AI receptionist. She receives the customer request, captures the important details, and hands it to Foreman.
 
