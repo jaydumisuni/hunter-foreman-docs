@@ -6,7 +6,7 @@ Hunter Foreman
 
 ## Tagline
 
-AI operations infrastructure for small businesses — from customer request to owned work.
+AI operations infrastructure for real businesses — from customer request to owned work.
 
 ## Short Description
 
@@ -14,7 +14,7 @@ Hunter Foreman turns customer requests into structured work. ROSE receives the r
 
 ## Problem
 
-Small businesses often receive requests through websites, WhatsApp, email, phone calls, social media, and staff conversations. The problem is not only answering the customer. The deeper problem is ownership: who captured the request, who understands it, who routes it, who follows up, and where the business can see the work state.
+Bars, restaurants, cafés, repair shops, startups, and other small or growing teams often receive requests through websites, WhatsApp, email, phone calls, social media, and staff conversations. The problem is not only answering the customer. The deeper problem is ownership: who captured the request, who understands it, who routes it, who follows up, and where the business can see the work state.
 
 Most chatbot demos stop at the reply. A real business needs the work to move.
 
@@ -49,7 +49,7 @@ The public demo also served as a completion and verification path for the wider 
 
 The remaining work is **business rollout**: applying the completed implementation to the main operating environment, configuring private services, and connecting existing systems safely.
 
-The broader THETECHGUY ecosystem already supports real Events operations, digital invitations, QR access, payment handling, referrals, commissions, and private WhatsApp workflows. These production systems are intentionally excluded from the public hackathon runtime because they require private credentials, client records, transaction data, and internal infrastructure.
+The broader THETECHGUY ecosystem already supports real Events operations, digital invitations, QR access, payment handling, browser-based POS operations, referrals, commissions, and private WhatsApp workflows. These production systems are intentionally excluded from the public hackathon runtime because they require private credentials, client records, transaction data, and internal infrastructure.
 
 Not connected in the public demo does not mean unbuilt.
 
@@ -132,9 +132,9 @@ proof/fireworks-classification-proof.json
 
 ## Why It Matters
 
-This project reframes AI from a conversation tool into an operations layer. A small business should not need a large software team to organize work, connect apps, and see what is happening. Hunter Foreman shows how an AI-assisted system can receive, route, track, and escalate work while keeping humans in control.
+This project reframes AI from a conversation tool into an operations layer. A real business should not need a large software team to organize work, connect apps, and see what is happening. Hunter Foreman shows how an AI-assisted system can receive, route, track, and escalate work while keeping humans in control.
 
-The project is grounded in real operating workflows rather than a fictional hackathon-only scenario. The public implementation proves the orchestration layer, while the broader business provides the real client, Events, payment, referral, and commission context that the system is designed to coordinate.
+The project is grounded in real operating workflows rather than a fictional hackathon-only scenario. The public implementation proves the orchestration layer, while the broader business provides the real client, Events, payment, POS, referral, and commission context that the system is designed to coordinate.
 
 ## Public Safety Boundary
 
@@ -157,7 +157,7 @@ Judges should evaluate the project as infrastructure, not as a single chatbot. T
 
 The Hunter voice narration should be considered supporting ecosystem integration and evidence of reusable internal AI infrastructure, not a claim that voice interaction is part of the current Foreman runtime.
 
-The business and Events URLs demonstrate the operating ecosystem behind the project. They do not imply that private production payments, referrals, commissions, client records, or credentials are exposed through the public demo.
+The business and Events URLs demonstrate the operating ecosystem behind the project. They do not imply that private production payments, POS operations, referrals, commissions, client records, or credentials are exposed through the public demo.
 
 ## Business Rollout and Future Expansion
 

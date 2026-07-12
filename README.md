@@ -26,7 +26,7 @@ The hackathon demo also served as a completion and verification path for core bu
 
 The remaining work is **business rollout**: applying the completed implementation to the main operating environment, configuring private services, and connecting existing production systems safely.
 
-The broader THETECHGUY ecosystem already supports real Events operations, digital invitations, QR access, payment handling, referrals, commissions, and private WhatsApp workflows. Those systems are intentionally excluded from the public hackathon runtime because they depend on private credentials, client records, transactions, and internal infrastructure.
+The broader THETECHGUY ecosystem already supports real Events operations, digital invitations, QR access, payment handling, browser-based POS operations, referrals, commissions, and private WhatsApp workflows. Those systems are intentionally excluded from the public hackathon runtime because they depend on private credentials, client records, transactions, and internal infrastructure.
 
 ## What This Repo Contains
 
@@ -44,7 +44,7 @@ public-safety.md    Public/private boundary
 
 ## Core Story
 
-Hunter Foreman is an AI operations foreman for small businesses.
+Hunter Foreman is an AI operations foreman for real businesses: bars, restaurants, cafés, repair shops, startups, small teams, and growing teams.
 
 ROSE receives customer requests. Foreman understands the request, creates the task, routes the work, updates the dashboard, dispatches to connected apps, receives acknowledgement, and shows the work state through a live dashboard.
 
@@ -72,7 +72,7 @@ Same platform, different emphasis.
 
 - `hunter-foreman` includes the Fireworks-backed classifier path, deterministic fallback, connected bridge, dashboard, final screenshots, Docker proof, and live Fireworks classification evidence.
 - The completed demo capabilities are implemented for the wider THETECHGUY business architecture; business rollout and private configuration remain.
-- Existing Events, invitation, QR, payment, referral, commission, and WhatsApp workflows operate elsewhere in the broader business ecosystem and are intentionally not connected to the public runtime.
+- Existing Events, invitation, QR, payment, POS, referral, commission, and WhatsApp workflows operate elsewhere in the broader business ecosystem and are intentionally not connected to the public runtime.
 - `hunter-foreman-demo` contains the connected receiver used to prove versioned App Bridge dispatch outside the main application.
 - `hunter-foreman-docs` contains the judge-facing submission pack, architecture, demo guidance, and proof checklists.
 - `Sergeant` is the supporting implementation reviewer/proof layer shaped through Hunter Foreman.
