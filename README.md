@@ -11,6 +11,15 @@ Judge-facing documentation, pitch material, demo scripts, proof material, and ar
 
 See `cross-repo-index.md` and `proof/repo-coverage-matrix.md` for the three-repository implementation map and supporting review coverage.
 
+## Clone the Submission Pack
+
+```bash
+git clone https://github.com/jaydumisuni/hunter-foreman-docs.git
+cd hunter-foreman-docs
+```
+
+No installation is required; this repository contains the documentation, architecture, demo guidance, pitch material, and proof checklists.
+
 ## Public Demo
 
 - Judge-facing application: https://hunter-foreman.thetechguyds.com
