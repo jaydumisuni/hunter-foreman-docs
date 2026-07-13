@@ -18,9 +18,9 @@ See `cross-repo-index.md` and `proof/repo-coverage-matrix.md` for the three-repo
 - Events platform: https://events.thetechguyds.com
 - Local application: http://localhost:3000
 
-### Interactive Judge Experience
+### Explore the Live UI
 
-The public hub is intentionally screenshot-driven, but it is not a static gallery. Its navigation, buttons, image hotspots, Hunter guide, and **Launch Interactive Demo** control are clickable. **Watch Demo** opens the animated visual preview; **Launch Interactive Demo** opens the working in-browser application. No clone is required to try the hosted demo.
+The public interface is fully clickable. Use the navigation, buttons, image hotspots, Hunter guide, and **Launch Interactive Demo** to explore the project. **Watch Demo** opens the animated preview, while **Launch Interactive Demo** opens the working in-browser application. No clone is required to try the hosted demo.
 
 ## Operating Business Context
 
