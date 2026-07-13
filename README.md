@@ -18,6 +18,10 @@ See `cross-repo-index.md` and `proof/repo-coverage-matrix.md` for the three-repo
 - Events platform: https://events.thetechguyds.com
 - Local application: http://localhost:3000
 
+### Interactive Judge Experience
+
+The public hub is intentionally screenshot-driven, but it is not a static gallery. Its navigation, buttons, image hotspots, Hunter guide, and **Launch Interactive Demo** control are clickable. **Watch Demo** opens the animated visual preview; **Launch Interactive Demo** opens the working in-browser application. No clone is required to try the hosted demo.
+
 ## Operating Business Context
 
 Hunter Foreman was developed inside **THETECHGUY DIGITAL SOLUTIONS**, an operating Zambian business serving real clients. The business and Events URLs shown in the main hero are not decorative mock links: they identify the real production-facing ecosystem whose workflows informed the project.
