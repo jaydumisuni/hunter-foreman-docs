@@ -1,16 +1,17 @@
 # Submission Readiness Checklist
 
-Final freeze gate for Hunter Foreman before screenshots, demo recording, and final submission.
+Final submission and freeze record for Hunter Foreman.
 
 ## Current Status
 
 ```text
-Status: PRE-FREEZE REVIEW
-Freeze state: not frozen yet
-Runtime proof: pending
-Screenshots: pending
-Demo recording: pending
-Final submission packaging: pending
+Status: SUBMITTED
+Freeze state: frozen
+Runtime proof: complete
+Screenshots: complete
+Demo recording: complete
+Final submission packaging: complete
+Judging state: awaiting judges
 ```
 
 ## Repositories Covered
@@ -18,74 +19,86 @@ Final submission packaging: pending
 - [x] `jaydumisuni/hunter-foreman`
 - [x] `jaydumisuni/hunter-foreman-demo`
 - [x] `jaydumisuni/hunter-foreman-docs`
+- [x] `jaydumisuni/Sergeant` documented as the supporting review/proof layer
 
 ## Implementation Truth
 
 - [x] Main app exists and is public-safe.
-- [x] Receiver app exists and accepts the bridge contract.
+- [x] Receiver app exists and accepts the versioned App Bridge contract.
 - [x] Docs repo contains pitch, submission, demo, architecture, proof, QA, and reviewer material.
-- [x] Provider-backed classification path exists.
+- [x] Provider-backed Fireworks classification path exists and is verified.
 - [x] Deterministic fallback remains available for local judging.
 - [x] Task metadata shows classifier provider and fallback state.
 - [x] No private runtime secrets are committed.
+- [x] Public/private and business-rollout boundaries are documented.
 
 ## Claim-To-Code Review
 
-- [x] Docs no longer claim verified AMD deployment before proof.
-- [x] AI Infra positioning says AMD proof is pending until evidence is captured.
-- [x] Final submission draft describes provider/fallback classification truthfully.
-- [x] Clean-clone checklist includes provider fallback and provider-backed proof.
+- [x] Submission claims match the implemented public runtime.
+- [x] Fireworks provider wording matches the captured proof.
+- [x] AMD / AI infrastructure wording matches the evidence available.
+- [x] Final submission text describes provider and fallback behavior truthfully.
+- [x] Clean-clone guidance covers provider fallback and provider-backed proof.
 - [x] Reviewer principles are saved in `reviewer/engineering-principles.md`.
+- [x] Sergeant is linked honestly without overstating its role.
 
 ## Review Status
 
-- [x] `hunter-foreman` provider classifier PR merged.
-- [x] `hunter-foreman` CI passed before merge.
-- [x] CodeRabbit reported no actionable comments on provider classifier PR.
-- [x] Docs AMD/provider alignment PR merged after manual claim-to-code review.
-- [ ] CodeRabbit review for docs AMD/provider alignment if the review limit becomes available.
-- [ ] Final owner review.
+- [x] `hunter-foreman` provider classifier work merged.
+- [x] Main repository tests and CI passed.
+- [x] Docs alignment work merged after claim-to-code review.
+- [x] Demo receiver repository updated and cross-linked.
+- [x] Repository consistency checks passed.
+- [x] Final owner review completed.
 
-## Proof Still Required
+## Proof Completed
 
-- [ ] Fresh clone of all three repositories.
-- [ ] Main app Docker run.
-- [ ] Connected demo Docker run.
-- [ ] API health checks.
-- [ ] Provider fallback proof.
-- [ ] Provider-backed proof with runtime credentials configured outside Git.
-- [ ] AMD / Fireworks proof evidence or explicit pending note.
-- [ ] Receiver failure-mode proof.
-- [ ] Public safety check.
+- [x] Fresh-clone/public proof workflow completed for the submission repositories.
+- [x] Main app Docker startup proof completed.
+- [x] Connected demo Docker proof completed.
+- [x] API health checks captured.
+- [x] Provider fallback behavior verified.
+- [x] Provider-backed Fireworks proof captured with runtime credentials kept outside Git.
+- [x] Fireworks evidence records `provider: fireworks` and `fallbackUsed: false`.
+- [x] Receiver acknowledgement and connected App Bridge behavior verified.
+- [x] Failure behavior and safe fallback boundaries reviewed.
+- [x] Public safety check completed.
+- [x] Proof artifacts are covered by `proof/SHA256SUMS.txt` in the main repository.
 
-## Assets Still Required
+## Assets Completed
 
-- [ ] Main dashboard screenshot.
-- [ ] ROSE intake screenshot.
-- [ ] Classifier provider/fallback screenshot.
-- [ ] Connected receiver acknowledgement screenshot.
-- [ ] Failure-mode screenshot.
-- [ ] Three-minute demo video.
-- [ ] Final AI Infra Summit submission text.
-- [ ] Final TechEx submission text.
+- [x] Main dashboard screenshot.
+- [x] ROSE intake and request-creation screenshots.
+- [x] Classifier/provider and system-health evidence.
+- [x] Connected receiver acknowledgement evidence.
+- [x] Task board, analytics, settings, and connected-app screenshots.
+- [x] Demo walkthrough asset.
+- [x] Three-minute demo video.
+- [x] Final submission text.
+- [x] Slide presentation.
+- [x] Public demo deployment.
 
-## Freeze Rule
+## Freeze Rule — Satisfied
 
-Do not mark the repositories frozen until:
+The repositories were frozen after confirming:
 
-1. No known claim-to-code mismatches remain.
-2. No implementation changes are still planned for submission.
-3. Clean-clone proof passes.
-4. Provider/AMD wording matches the actual evidence captured.
+1. No known claim-to-code mismatches remained.
+2. No further implementation changes were required for submission.
+3. Clean-clone and runtime proof passed.
+4. Provider and AI-infrastructure wording matched the captured evidence.
+5. Final assets, repository links, and submission fields were reviewed.
+6. The final platform submission was completed.
 
 ## Final Sign-Off
 
 ```text
-Repository freeze: pending
-Clean-clone proof: pending
-Demo assets: pending
-Submission package: pending
-Owner sign-off: pending
+Repository freeze: complete
+Clean-clone proof: complete
+Demo assets: complete
+Submission package: complete
+Owner sign-off: complete
+Platform submission: complete
+Current action: wait for judges
 ```
 
-When every required item is checked, stop adding features and submit.
+Hunter Foreman is submitted. No further submission changes are planned unless a judge or platform reviewer requests clarification.
